@@ -1,0 +1,78 @@
+{
+  "name": "Carrier",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "title": "Company Name"
+    },
+    "contact_name": {
+      "type": "string",
+      "title": "Contact Name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Phone"
+    },
+    "mc_number": {
+      "type": "string",
+      "title": "MC Number"
+    },
+    "dot_number": {
+      "type": "string",
+      "title": "DOT Number"
+    },
+    "equipment_type": {
+      "type": "string",
+      "enum": [
+        "Dry Van",
+        "Reefer",
+        "Flatbed",
+        "Step Deck",
+        "Power Only",
+        "Tanker"
+      ],
+      "title": "Equipment Type"
+    },
+    "insurance_status": {
+      "type": "string",
+      "enum": [
+        "Valid",
+        "Expiring",
+        "Expired",
+        "None"
+      ],
+      "default": "Valid",
+      "title": "Insurance Status"
+    },
+    "insurance_expiry": {
+      "type": "string",
+      "format": "date",
+      "title": "Insurance Expiry"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Inactive",
+        "Blacklisted"
+      ],
+      "default": "Active",
+      "title": "Status"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "company_name",
+    "contact_name",
+    "phone"
+  ]
+}

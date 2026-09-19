@@ -1,0 +1,103 @@
+{
+  "name": "Load",
+  "type": "object",
+  "properties": {
+    "load_number": {
+      "type": "string",
+      "title": "Load Number"
+    },
+    "shipper_id": {
+      "type": "string",
+      "title": "Shipper",
+      "relation": "entities.Shipper"
+    },
+    "carrier_id": {
+      "type": "string",
+      "title": "Carrier",
+      "relation": "entities.Carrier"
+    },
+    "origin_city": {
+      "type": "string",
+      "title": "Origin City"
+    },
+    "origin_state": {
+      "type": "string",
+      "title": "Origin State"
+    },
+    "destination_city": {
+      "type": "string",
+      "title": "Destination City"
+    },
+    "destination_state": {
+      "type": "string",
+      "title": "Destination State"
+    },
+    "pickup_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Pickup Date"
+    },
+    "delivery_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Delivery Date"
+    },
+    "equipment_type": {
+      "type": "string",
+      "enum": [
+        "Dry Van",
+        "Reefer",
+        "Flatbed",
+        "Step Deck",
+        "Power Only",
+        "Tanker"
+      ],
+      "title": "Equipment Type"
+    },
+    "weight": {
+      "type": "number",
+      "title": "Weight (lbs)"
+    },
+    "commodity": {
+      "type": "string",
+      "title": "Commodity"
+    },
+    "rate": {
+      "type": "number",
+      "title": "Rate ($)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Pending",
+        "Assigned",
+        "At Pickup",
+        "In Transit",
+        "Delivered",
+        "Invoiced",
+        "Completed",
+        "Cancelled"
+      ],
+      "default": "Pending",
+      "title": "Status"
+    },
+    "bol_url": {
+      "type": "string",
+      "title": "BOL Document URL"
+    },
+    "rate_conf_url": {
+      "type": "string",
+      "title": "Rate Confirmation URL"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "load_number",
+    "origin_city",
+    "destination_city",
+    "rate"
+  ]
+}

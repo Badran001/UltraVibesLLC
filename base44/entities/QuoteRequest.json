@@ -1,0 +1,72 @@
+{
+  "name": "QuoteRequest",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "title": "Company Name"
+    },
+    "contact_name": {
+      "type": "string",
+      "title": "Contact Name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Phone"
+    },
+    "origin": {
+      "type": "string",
+      "title": "Origin"
+    },
+    "destination": {
+      "type": "string",
+      "title": "Destination"
+    },
+    "equipment_type": {
+      "type": "string",
+      "enum": [
+        "Dry Van",
+        "Reefer",
+        "Flatbed",
+        "Step Deck",
+        "Power Only",
+        "Tanker"
+      ],
+      "title": "Equipment Type"
+    },
+    "pickup_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Pickup Date"
+    },
+    "freight_description": {
+      "type": "string",
+      "title": "Freight Description"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "New",
+        "Contacted",
+        "Quoted",
+        "Converted",
+        "Archived"
+      ],
+      "default": "New",
+      "title": "Status"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "contact_name",
+    "email"
+  ]
+}

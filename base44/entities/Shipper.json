@@ -1,0 +1,54 @@
+{
+  "name": "Shipper",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "title": "Company Name"
+    },
+    "contact_name": {
+      "type": "string",
+      "title": "Contact Name"
+    },
+    "email": {
+      "type": "string",
+      "format": "email",
+      "title": "Email"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Phone"
+    },
+    "address": {
+      "type": "string",
+      "title": "Address"
+    },
+    "mc_number": {
+      "type": "string",
+      "title": "MC Number"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Active",
+        "Inactive",
+        "Prospect"
+      ],
+      "default": "Active",
+      "title": "Status"
+    },
+    "credit_limit": {
+      "type": "number",
+      "title": "Credit Limit"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "company_name",
+    "contact_name",
+    "email"
+  ]
+}

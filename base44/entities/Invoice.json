@@ -1,0 +1,59 @@
+{
+  "name": "Invoice",
+  "type": "object",
+  "properties": {
+    "invoice_number": {
+      "type": "string",
+      "title": "Invoice Number"
+    },
+    "load_id": {
+      "type": "string",
+      "title": "Load",
+      "relation": "entities.Load"
+    },
+    "shipper_id": {
+      "type": "string",
+      "title": "Shipper",
+      "relation": "entities.Shipper"
+    },
+    "amount": {
+      "type": "number",
+      "title": "Amount ($)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Draft",
+        "Sent",
+        "Paid",
+        "Overdue",
+        "Void"
+      ],
+      "default": "Draft",
+      "title": "Status"
+    },
+    "issue_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Issue Date"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Due Date"
+    },
+    "paid_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Paid Date"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notes"
+    }
+  },
+  "required": [
+    "invoice_number",
+    "amount"
+  ]
+}
