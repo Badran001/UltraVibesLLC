@@ -9,8 +9,10 @@ import AuthLayout from "@/components/AuthLayout";
 import GoogleIcon from "@/components/GoogleIcon";
 import { safeReturnTo } from "@/lib/authReturnTo";
 
+const DEFAULT_LOGIN_EMAIL = "contact@ultravibesllc.com";
+
 export default function Login() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState(DEFAULT_LOGIN_EMAIL);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -26,7 +28,7 @@ export default function Login() {
       await base44.auth.loginViaEmailPassword(email, password);
       window.location.href = returnTo;
     } catch (err) {
-      setError(err.message || "Invalid email or password");
+      setError(err.status === 401 ? "Invalid email or password. Check that this account exists in Base44 and has been verified." : (err.message || "Unable to log in"));
     } finally {
       setLoading(false);
     }
