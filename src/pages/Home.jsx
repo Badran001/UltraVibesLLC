@@ -52,8 +52,12 @@ export default function Home() {
     }
     setSubmitting(true);
     try {
-      await base44.entities.QuoteRequest.create({ ...form, status: "New" });
       await sendContactEmail(form);
+      try {
+        await base44.entities.QuoteRequest.create({ ...form, status: "New" });
+      } catch (storageError) {
+        console.warn("Quote email sent, but Base44 storage failed:", storageError);
+      }
       toast({ title: "Request received!", description: "Our dispatch team will reach out within 24 hours." });
       setForm({ company_name: "", contact_name: "", email: "", phone: "", origin: "", destination: "", equipment_type: "Dry Van", pickup_date: "", freight_description: "" });
     } catch (err) {
